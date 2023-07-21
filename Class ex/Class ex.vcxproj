@@ -136,6 +136,7 @@
   <ItemGroup>
     <ClCompile Include="Day_and_Student.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="String_Stack_Queue.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

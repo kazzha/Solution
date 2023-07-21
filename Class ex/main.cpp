@@ -2,9 +2,9 @@
 #include <algorithm>
 #include <string>
 #include "Day_and_Student.h"
+#include "String_Stack_Queue.h"
 
-
-
+/*
 int main()
 {
 
@@ -44,4 +44,49 @@ int main()
 	
 
 	delete[] students;
+}
+
+*/
+enum Command
+{
+	PUSH = 1,
+	POP = 2,
+	QUIT = 3
+};
+
+int main()
+{
+	int stackSize{}, y{};
+
+	std::cout << "STACK의 크기를 입력하세요 : ";
+	std::cin >> stackSize;
+
+	Stack myStack(stackSize);
+
+	while (y != 3)
+	{
+		std::cin >> y;
+
+		switch (y)
+		{
+			{
+		case PUSH:
+			int value{};
+			std::cout << "value >";
+			std::cin >> value;
+			myStack.PUSH(value);
+			myStack.Print();
+			break;
+			}
+		case POP:
+			myStack.POP();
+			myStack.Print();
+			break;
+		case QUIT:
+			break;
+		default:
+			std::cout << "1,2,3번 중에 입력하세요." << std::endl;
+			break;
+		}
+	}
 }
