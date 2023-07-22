@@ -47,12 +47,14 @@ int main()
 }
 
 */
+/*
 enum Command
 {
 	PUSH = 1,
 	POP = 2,
 	QUIT = 3
 };
+
 
 int main()
 {
@@ -81,6 +83,51 @@ int main()
 		case POP:
 			myStack.POP();
 			myStack.Print();
+			break;
+		case QUIT:
+			break;
+		default:
+			std::cout << "1,2,3번 중에 입력하세요." << std::endl;
+			break;
+		}
+	}
+}
+
+*/
+enum Command
+{
+	ENQUEUE = 1,
+	DEQUEUE = 2,
+	QUIT = 3
+};
+
+int main()
+{
+	int queueSize{}, y{};
+
+	std::cout << "QUEUE의 크기를 입력하세요 : ";
+	std::cin >> queueSize;
+
+	Queue myQueue(queueSize);
+
+	while (y != 3)
+	{
+		std::cin >> y;
+
+		switch (y)
+		{
+			{
+		case ENQUEUE:
+			int value{};
+			std::cout << "value >";
+			std::cin >> value;
+			myQueue.Enqueue(value);
+			myQueue.Print();
+			break;
+			}
+		case DEQUEUE:
+			myQueue.Dequeue();
+			myQueue.Print();
 			break;
 		case QUIT:
 			break;

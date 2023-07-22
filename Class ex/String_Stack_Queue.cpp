@@ -48,3 +48,52 @@ void Stack::Print()
 	}
 
 }
+
+void Queue::Enqueue(int value)
+{
+	if (mTail == -1)
+	{
+		mP[++mTail] = value;
+		return;
+	}
+
+	else if ((mTail + 1) % mQueueSize == mHead)
+	{
+		std::cout << "Queue is Full!!" << std::endl;
+		return;
+	}
+
+	mTail = (mTail + 1) % mQueueSize;
+	mP[mTail] = value;
+
+}
+
+void Queue::Dequeue()
+{
+	if (mTail < 0)
+	{
+		std::cout << "Queue is already empty!!" << std::endl;
+		return;
+	}
+
+	if (mTail == mHead) {
+		std::cout << "Queue is empty!!" << std::endl;
+		mHead = 0;
+		mTail = -1;
+		return;
+	}
+
+	mHead = (mHead + 1) % mQueueSize;
+}
+
+void Queue::Print()
+{
+	std::cout << "-----QUEUE-----" << std::endl;
+
+	for (int i = mHead; i <= mTail; i++)
+	{
+		std::cout << mP[i] << " ";
+	}
+
+	std::cout << std::endl;
+}
