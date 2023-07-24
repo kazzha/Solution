@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class ex", "Class ex\Class 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stack_ex", "Stack_ex\Stack_ex.vcxproj", "{D6FD27A7-4DA1-41B8-AFBD-A1EFC73C64D4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynamicClass", "DynamicClass\DynamicClass.vcxproj", "{4C08A4FB-9048-45F2-B653-1B26AC2BA9FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{D6FD27A7-4DA1-41B8-AFBD-A1EFC73C64D4}.Release|x64.Build.0 = Release|x64
 		{D6FD27A7-4DA1-41B8-AFBD-A1EFC73C64D4}.Release|x86.ActiveCfg = Release|Win32
 		{D6FD27A7-4DA1-41B8-AFBD-A1EFC73C64D4}.Release|x86.Build.0 = Release|Win32
+		{4C08A4FB-9048-45F2-B653-1B26AC2BA9FF}.Debug|x64.ActiveCfg = Debug|x64
+		{4C08A4FB-9048-45F2-B653-1B26AC2BA9FF}.Debug|x64.Build.0 = Debug|x64
+		{4C08A4FB-9048-45F2-B653-1B26AC2BA9FF}.Debug|x86.ActiveCfg = Debug|Win32
+		{4C08A4FB-9048-45F2-B653-1B26AC2BA9FF}.Debug|x86.Build.0 = Debug|Win32
+		{4C08A4FB-9048-45F2-B653-1B26AC2BA9FF}.Release|x64.ActiveCfg = Release|x64
+		{4C08A4FB-9048-45F2-B653-1B26AC2BA9FF}.Release|x64.Build.0 = Release|x64
+		{4C08A4FB-9048-45F2-B653-1B26AC2BA9FF}.Release|x86.ActiveCfg = Release|Win32
+		{4C08A4FB-9048-45F2-B653-1B26AC2BA9FF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

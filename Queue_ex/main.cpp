@@ -19,11 +19,7 @@ struct Queue
 void PrintQueue(Queue& input)
 {
 	std::cout << "--------" << std::endl;
-	if (input.head == input.tail+1 )
-	{
-		std::cout << "Empty!" << std::endl << "--------" << std::endl;
-		return;
-	}
+	
 	for (int i = input.head; i <= input.tail; i++)
 	{
 	std::cout << input.container[i] << " ";
@@ -41,19 +37,34 @@ void PrintInfo()
 
 void Enqueue(Queue& input, int value)
 {
-	if (input.tail >= QUEUE_SIZE - 1) {
-		std::cout << "Queue is full" << std::endl;
+	if (input.tail == -1)
+	{
+		input.container[++input.tail] = value;
 		return;
 	}
+
+	else if ((input.tail + 1) % QUEUE_SIZE == input.head)
+	{
+		std::cout << "Queue is Full!!" << std::endl;
+		return;
+	}
+
 	input.tail = (input.tail + 1) % QUEUE_SIZE;
 	input.container[input.tail] = value;
 }
 
 void Dequeue(Queue& input)
 {
-	if (input.head-1 == (input.tail) % QUEUE_SIZE)
+	if (input.tail < 0)
 	{
-		std::cout << "Queue is already empty" << std::endl;
+		std::cout << "Queue is already empty!!" << std::endl;
+		return;
+	}
+
+	if (input.tail == input.head) {
+		std::cout << "Queue is empty!!" << std::endl;
+		input.head = 0;
+		input.tail = -1;
 		return;
 	}
 	input.head = (input.head + 1) % QUEUE_SIZE;
