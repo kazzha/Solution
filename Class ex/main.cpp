@@ -47,6 +47,13 @@ int main()
 }
 
 */
+
+int main()
+{
+	String myString("Hello World!");
+
+	myString.Print();
+}
 /*
 enum Command
 {
@@ -93,7 +100,7 @@ int main()
 	}
 }
 
-*/
+
 enum Command
 {
 	ENQUEUE = 1,
@@ -137,3 +144,4 @@ int main()
 		}
 	}
 }
+*/

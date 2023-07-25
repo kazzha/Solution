@@ -6,8 +6,9 @@ void StackList::Push(int value)
 	Stack* newStack = new Stack(value);
 	if (mHead == nullptr) {
 		mHead = mTail = newStack;
+		mTail->mNext = nullptr;
 	}
-	if (mTail != nullptr)
+	else if (mTail != nullptr)
 	{
 		mTail->mNext = newStack;
 		mTail = newStack;

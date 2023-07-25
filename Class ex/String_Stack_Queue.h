@@ -7,14 +7,14 @@
 class String
 {
 private:
-	int mlength;
+	int mLength;
 	char* mString;
 
 public:
-	String(const char str[]) : mlength((int)strlen(str)), mString(new char[mlength + 1])
+	String(const char str[]) : mLength((int)strlen(str)), mString(new char[mLength + 1])
 	{
-		char* strcpy_s(mString, str[]);
-		std::cout << mString;
+		strcpy_s(mString, mLength +1, str);
+		
 	}
 
 	~String()
@@ -22,6 +22,13 @@ public:
 		delete[] mString;
 	}
 
+	void Print()
+	{
+		for (int i = 0; i < mLength + 1; i++)
+		{
+			std::cout << mString[i];
+		}
+	}
 };
 
 

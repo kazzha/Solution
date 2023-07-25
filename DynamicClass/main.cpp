@@ -4,9 +4,8 @@
 
 int main()
 {
-	StackList babo;
-	babo.Push(1);
-	babo.Push(2);
-	babo.Push(3);
-	babo.PrintStack();
+	
+	QueueList baba;
+	baba.Enqueue(100);
+	baba.PrintQueue();
 }
