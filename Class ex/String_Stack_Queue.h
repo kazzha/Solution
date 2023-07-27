@@ -11,10 +11,62 @@ private:
 	char* mString;
 
 public:
+	// 1번
+	String() : String("") {}
+
+	// 2번
+	String(int blank) : mLength(blank) , mString(new char[mLength+1]) 
+	{
+		for (int i = 0; i < blank; i++)
+		{
+			mString[i] = ' ';
+	    }
+		mString[blank] = '\0';
+	}
+	
+	// 3번
 	String(const char str[]) : mLength((int)strlen(str)), mString(new char[mLength + 1])
 	{
-		strcpy_s(mString, mLength +1, str);
+		strcpy_s(mString, mLength + 1, str);
+
+	}
+
+	// 4번
+	String(const String& target) : mLength(target.mLength)
+	{
+		mString = new char[mLength + 1] {};
+		strcpy_s(mString, mLength + 1, target.mString);
+	}
+
+	// 5번
+	String operator + (const String& target)
+	{
+		int CombineLength = mLength + target.mLength;
+		String temp;
+		temp.mLength = CombineLength;
+		temp.mString = new char[CombineLength + 1];
+
+		strcpy_s(temp.mString, mLength+1, mString);
+		strncat_s(temp.mString, CombineLength + 1, target.mString, target.mLength);
+
+		temp.mString[CombineLength] = '\0';
 		
+		return temp;
+	}
+
+	String operator += (const String& target)
+	{
+		int CombineLength = mLength + target.mLength;
+		String temp;
+		temp.mLength = CombineLength;
+		temp.mString = new char[CombineLength + 1];
+
+		strcpy_s(temp.mString, mLength + 1, mString);
+		strncat_s(temp.mString, CombineLength + 1, target.mString, target.mLength);
+
+		temp.mString[CombineLength] = '\0';
+
+		return temp;
 	}
 
 	~String()

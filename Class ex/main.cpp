@@ -50,9 +50,11 @@ int main()
 
 int main()
 {
-	String myString("Hello World!");
-
-	myString.Print();
+	String s4("엠프티에서 이게 나오면 성공");
+	String empty("은 거짓말입니다");
+	String s5("시발");
+	s5 += s4;
+	s5.Print();
 }
 /*
 enum Command
