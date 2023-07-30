@@ -54,19 +54,22 @@ public:
 		return temp;
 	}
 
-	String operator += (const String& target)
+	String& operator += (const String& target)
 	{
-		int CombineLength = mLength + target.mLength;
-		String temp;
-		temp.mLength = CombineLength;
-		temp.mString = new char[CombineLength + 1];
+	    String temp = (*this);
+		mLength += target.mLength;
+		delete[] mString;
+		mString = new char[mLength+1];
 
-		strcpy_s(temp.mString, mLength + 1, mString);
-		strncat_s(temp.mString, CombineLength + 1, target.mString, target.mLength);
+		strcpy_s(mString, temp.mLength+1, temp.mString);
+		strncat_s(mString, mLength + 1, target.mString, target.mLength);
 
-		temp.mString[CombineLength] = '\0';
+		return *this;
+	}
 
-		return temp;
+	char operator [] (int index)
+	{
+		return mString[index];
 	}
 
 	~String()

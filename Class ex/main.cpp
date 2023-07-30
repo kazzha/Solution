@@ -50,9 +50,9 @@ int main()
 
 int main()
 {
-	String s4("엠프티에서 이게 나오면 성공");
+	String s4("저는 s4이고요 김채연입니다 이채연아님");
 	String empty("은 거짓말입니다");
-	String s5("시발");
+	String s5("저는 s5이고요 김유연입니다 제가 먼저 나와야 성공 // ");
 	s5 += s4;
 	s5.Print();
 }
