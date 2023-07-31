@@ -39,22 +39,8 @@ public:
 	}
 
 	// 5¹ø
-	String operator + (const String& target)
-	{
-		int CombineLength = mLength + target.mLength;
-		String temp;
-		temp.mLength = CombineLength;
-		temp.mString = new char[CombineLength + 1];
-
-		strcpy_s(temp.mString, mLength+1, mString);
-		strncat_s(temp.mString, CombineLength + 1, target.mString, target.mLength);
-
-		temp.mString[CombineLength] = '\0';
-		
-		return temp;
-	}
-
-	String& operator += (const String& target)
+	
+	String& operator + (const String& target)
 	{
 	    String temp = (*this);
 		mLength += target.mLength;
@@ -66,7 +52,7 @@ public:
 
 		return *this;
 	}
-
+	
 	// 6¹ø
 	char& operator [] (int index) 
 	{
@@ -78,7 +64,8 @@ public:
 	{
 		if (this != &target) {
 			delete[] mString;
-			mString = new char[target.mLength + 1];
+			mLength = target.mLength;
+			mString = new char[mLength + 1];
 			strcpy_s(mString, target.mLength + 1, target.mString);
 
 			return *this;
@@ -96,10 +83,7 @@ public:
 
 	void Print()
 	{
-		for (int i = 0; i < mLength + 1; i++)
-		{
-			std::cout << mString[i];
-		}
+		std::cout << mString << std::endl;
 	}
 };
 

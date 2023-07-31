@@ -51,10 +51,11 @@ int main()
 int main()
 {
 	String s4("hello im tripleS");
-	String empty("은 거짓말입니다");
-	String s5("저는 s5이고요 김유연입니다 제가 먼저 나와야 성공 // ");
-	s4 = s4;
-	s4.Print();
+	String empty;
+	String s5("sival ");
+	
+	empty = s4 + s5;
+	empty.Print();
 }
 /*
 enum Command
