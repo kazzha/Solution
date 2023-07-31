@@ -67,9 +67,26 @@ public:
 		return *this;
 	}
 
-	char operator [] (int index)
+	// 6¹ø
+	char& operator [] (int index) 
 	{
 		return mString[index];
+	}
+
+    // 7¹ø
+	String& operator = (const String& target)
+	{
+		if (this != &target) {
+			delete[] mString;
+			mString = new char[target.mLength + 1];
+			strcpy_s(mString, target.mLength + 1, target.mString);
+
+			return *this;
+		}
+		if (this == &target)
+		{
+			return *this;
+		}
 	}
 
 	~String()
