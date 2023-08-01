@@ -39,16 +39,24 @@ public:
 	}
 
 	// 5¹ø
-	
-	String& operator + (const String& target)
+	String operator + (const String& target)
 	{
-	    String temp = (*this);
-		mLength += target.mLength;
-		delete[] mString;
-		mString = new char[mLength+1];
+		int CombineLength = mLength + target.mLength;
+		String temp;
+		temp.mLength = CombineLength;
+		temp.mString = new char[CombineLength + 1];
 
-		strcpy_s(mString, temp.mLength+1, temp.mString);
-		strncat_s(mString, mLength + 1, target.mString, target.mLength);
+		strcpy_s(temp.mString, mLength + 1, mString);
+		strncat_s(temp.mString, CombineLength + 1, target.mString, target.mLength);
+
+		temp.mString[CombineLength] = '\0';
+
+		return temp;
+	}
+
+	String& operator += (const String& target)
+	{
+		*this = *this + target;
 
 		return *this;
 	}
@@ -62,7 +70,11 @@ public:
     // 7¹ø
 	String& operator = (const String& target)
 	{
-		if (this != &target) {
+		 if (this == &target)
+		 {
+			return *this;
+		 }
+    else if (this != &target) {
 			delete[] mString;
 			mLength = target.mLength;
 			mString = new char[mLength + 1];
@@ -70,10 +82,7 @@ public:
 
 			return *this;
 		}
-		if (this == &target)
-		{
-			return *this;
-		}
+		
 	}
 
 	~String()

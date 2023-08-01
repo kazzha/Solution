@@ -54,7 +54,7 @@ int main()
 	String empty;
 	String s5("sival ");
 	
-	empty = s4 + s5;
+	empty += s4;
 	empty.Print();
 }
 /*
