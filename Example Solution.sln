@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stack_ex", "Stack_ex\Stack_
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynamicClass", "DynamicClass\DynamicClass.vcxproj", "{4C08A4FB-9048-45F2-B653-1B26AC2BA9FF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OOPdataStructure", "OOPdataStructure\OOPdataStructure.vcxproj", "{1E251E00-DC89-49F9-9B49-D0F45D050FD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{4C08A4FB-9048-45F2-B653-1B26AC2BA9FF}.Release|x64.Build.0 = Release|x64
 		{4C08A4FB-9048-45F2-B653-1B26AC2BA9FF}.Release|x86.ActiveCfg = Release|Win32
 		{4C08A4FB-9048-45F2-B653-1B26AC2BA9FF}.Release|x86.Build.0 = Release|Win32
+		{1E251E00-DC89-49F9-9B49-D0F45D050FD8}.Debug|x64.ActiveCfg = Debug|x64
+		{1E251E00-DC89-49F9-9B49-D0F45D050FD8}.Debug|x64.Build.0 = Debug|x64
+		{1E251E00-DC89-49F9-9B49-D0F45D050FD8}.Debug|x86.ActiveCfg = Debug|Win32
+		{1E251E00-DC89-49F9-9B49-D0F45D050FD8}.Debug|x86.Build.0 = Debug|Win32
+		{1E251E00-DC89-49F9-9B49-D0F45D050FD8}.Release|x64.ActiveCfg = Release|x64
+		{1E251E00-DC89-49F9-9B49-D0F45D050FD8}.Release|x64.Build.0 = Release|x64
+		{1E251E00-DC89-49F9-9B49-D0F45D050FD8}.Release|x86.ActiveCfg = Release|Win32
+		{1E251E00-DC89-49F9-9B49-D0F45D050FD8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
