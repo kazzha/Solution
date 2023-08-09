@@ -9,14 +9,14 @@ protected:
 	Node* mPrev;
 
 public:
-	Node() : mData(0), mNext(nullptr) { }
-	Node(int input) : mData(input) , mNext(nullptr) {}
-	~Node() {}
-	void InputNext(Node* input)
+	Node() : mData(0), mNext(nullptr), mPrev (nullptr){ }
+	Node(int input) : mData(input) , mNext(nullptr), mPrev(nullptr) {}
+	~Node() {  }
+	void SetNext(Node* input)
 	{
 		mNext = input;
 	}
-	void InputPrev(Node* input)
+	void SetPrev(Node* input)
 	{
 		mPrev = input;
 	}

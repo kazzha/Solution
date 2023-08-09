@@ -17,8 +17,8 @@ public:
 		}
 		else
 		{
-			mTail->InputNext(NodeP);
-			NodeP->InputPrev(mTail);
+			mTail->SetNext(NodeP);
+			NodeP->SetPrev(mTail);
 			mTail = NodeP;
 		}
 	}
@@ -27,6 +27,7 @@ public:
 		if (mHead == nullptr)
 		{
 			std::cout << "Stack is already empty" << std::endl;
+			return;
 		}
 		else if (mTail == mHead)
 		{
@@ -37,14 +38,20 @@ public:
 		else {
 			Node* temp;
 			temp = mTail->GetPrev();
-			mTail->InputPrev(nullptr);
-			mTail->InputNext(nullptr);
+			mTail->SetPrev(nullptr);
+			mTail->SetNext(nullptr);
 			delete mTail;
 			mTail = temp;
 		}
 	}
 	void Print() override
 	{
+		if (mHead == nullptr)
+		{
+			std::cout << "stack is already empty" << std::endl;
+			return;
+		}
+
 		Node* temp = mTail;
 		while (temp != nullptr)
 		{
@@ -55,7 +62,7 @@ public:
 	void DeleteAll()
 	{
 		Node* temp = mHead;
-		Node* tempNext;
+		Node* tempNext = mHead->GetNext();
 
 		while (tempNext != nullptr)
 		{
@@ -63,6 +70,82 @@ public:
 			delete temp;
 			temp = tempNext;
 		}
+		mHead = mTail = nullptr;
 	}
+};
+
+class Queue : public LinkedList
+{
+public: 
+	Queue() {}
+	~Queue() {}
+	
+	void Enqueue(int input)
+	{
+		Node* NodeP = new Node(input);
+		if (mHead == nullptr)
+		{
+			mHead = mTail = NodeP;
+		}
+		else
+		{
+			mTail->SetNext(NodeP);
+			NodeP->SetPrev(mTail);
+			mTail = NodeP;
+		}
+	}
+
+	void Dequeue()
+	{
+		if (mHead == nullptr)
+		{
+			std::cout << "stack is already empty" << std::endl;
+			return;
+		}
+
+		else if (mHead == mTail)
+		{
+			delete mHead;
+			mHead = mTail = nullptr;
+		}
+
+		else {
+			Node* temp = mHead->GetNext();
+			delete mHead;
+			mHead = temp;
+		}
+	}
+
+	void Print() override
+	{
+		if (mHead == nullptr)
+		{
+			std::cout << "stack is already empty" << std::endl;
+			return;
+		}
+
+		Node* temp = mHead;
+		while (temp != nullptr)
+		{
+			std::cout << temp->GetData() << " ";
+			temp = temp->GetNext();
+		}
+		std::cout << std::endl;
+	}
+
+	void DeleteAll()
+	{
+		Node* temp = mHead;
+		Node* tempNext = mHead->GetNext();
+
+		while (tempNext != nullptr)
+		{
+			tempNext = temp->GetNext();
+			delete temp;
+			temp = tempNext;
+		}
+		mHead = mTail = nullptr;
+	}
+	
 };
 
